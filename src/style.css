@@ -1,0 +1,82 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 5rem 0 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.crud-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+/* Индивидуальные стили для каждой кнопки */
+.btn-create {
+  background-color: #4CAF50; /* Зеленый для Create */
+}
+
+.btn-create:hover {
+  background-color: #45a049;
+}
+
+.btn-read {
+  background-color: #2196F3; /* Синий для Read */
+}
+
+.btn-read:hover {
+  background-color: #0b7dda;
+}
+
+.btn-update {
+  background-color: #FFC107; /* Желтый для Update */
+}
+
+.btn-update:hover {
+  background-color: #ffb300;
+}
+
+.btn-delete {
+  background-color: #F44336; /* Красный для Delete */
+}
+
+.btn-delete:hover {
+  background-color: #d32f2f;
+}
+
+/* Контейнер для кнопок */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}

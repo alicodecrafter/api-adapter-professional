@@ -23,13 +23,12 @@ a:hover {
 }
 
 body {
-  margin: 5rem 0 0;
-  display: flex;
+  margin: 3rem 0 0;
   justify-content: center;
   align-content: center;
 }
 .crud-button {
-  padding: 10px 20px;
+  padding: 10px 15px;
   font-size: 16px;
   font-weight: bold;
   border: none;
@@ -57,6 +56,14 @@ body {
   background-color: #0b7dda;
 }
 
+.btn-protected {
+  background-color: #9C27B0; /* Фиолетовый для Private */
+}
+
+.btn-protected:hover {
+  background-color: #7b1fa2;
+}
+
 .btn-update {
   background-color: #FFC107; /* Желтый для Update */
 }
@@ -65,12 +72,28 @@ body {
   background-color: #ffb300;
 }
 
+.btn-patch {
+  background-color: #FF5722; /* Оранжевый для Patch */
+}
+
+.btn-patch:hover {
+  background-color: #e64a19;
+}
+
 .btn-delete {
-  background-color: #F44336; /* Красный для Delete */
+  background-color: #942a1e; /* Красный для Delete */
 }
 
 .btn-delete:hover {
   background-color: #d32f2f;
+}
+
+.btn-login {
+  background-color: #607D8B; /* Серый для Login */
+}
+
+.btn-login:hover {
+  background-color: #546e7a;
 }
 
 /* Контейнер для кнопок */

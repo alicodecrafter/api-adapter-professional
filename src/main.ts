@@ -24,7 +24,7 @@ const deleteBtn = document.querySelector(".btn-delete")!;
 const protectedBtn = document.querySelector(".btn-protected")!;
 const loginBtn = document.querySelector(".btn-login")!;
 
-const currentProviderApi = fetchApi;
+const currentProviderApi = axiosApi;
 
 let currentAbortController: AbortController | null = null;
 
@@ -48,6 +48,7 @@ getBtn.addEventListener("click", async () => {
 
 postBtn.addEventListener("click", async () => {
   console.log("POST request");
+
   const data = await currentProviderApi.post<Post, PostUpdate>("/posts", {
     title: "foo",
     body: "bar",
@@ -66,6 +67,7 @@ patchBtn.addEventListener("click", async () => {
 });
 putBtn.addEventListener("click", async () => {
   console.log("PUT request");
+
   currentProviderApi.put<Post, PostUpdate>("/posts/2", {
     title: "foo",
     body: "bar",
@@ -75,11 +77,13 @@ putBtn.addEventListener("click", async () => {
 
 deleteBtn.addEventListener("click", async () => {
   console.log("DELETE request");
+
   currentProviderApi.delete("/posts/3");
 });
 
 loginBtn.addEventListener("click", async () => {
   console.log("Login request");
+
   currentProviderApi
     .post<{
       accessToken: string;
@@ -96,6 +100,7 @@ loginBtn.addEventListener("click", async () => {
 
 protectedBtn.addEventListener("click", async () => {
   console.log("Private request");
+
   currentProviderApi
     .get<{
       message: string;

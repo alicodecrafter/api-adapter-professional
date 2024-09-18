@@ -1,6 +1,6 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { HttpAdapter } from "../interfaces/http-adapter.interface.ts";
 import { RequestOptions } from "../interfaces/types";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
 class AxiosAdapter implements HttpAdapter {
   async request<T, B = unknown>(
@@ -9,7 +9,6 @@ class AxiosAdapter implements HttpAdapter {
   ): Promise<T> {
     const { method = "GET", headers, body, signal } = options;
 
-    // Настройка запроса для axios
     const axiosConfig: AxiosRequestConfig = {
       url,
       method,
@@ -26,7 +25,7 @@ class AxiosAdapter implements HttpAdapter {
         const status = error.response?.status;
         const message = error.message;
         const axiosError = new Error(message);
-        (axiosError as any).status = status; // Добавляем статус к ошибке
+        (axiosError as any).status = status;
         throw axiosError;
       } else {
         throw error;

@@ -1,7 +1,7 @@
 import { HttpAdapter } from "./interfaces/http-adapter.interface.ts";
 import { QueryParams, RequestOptions } from "./interfaces/types";
 
-class APIBase {
+class ApiBase {
   baseURL: string;
   defaultHeaders: Record<string, string>;
   private adapter: HttpAdapter;
@@ -126,7 +126,7 @@ class APIBase {
       const response = await this.post<{ accessToken: string }>("/refresh", {
         refreshToken: this.refreshTokenValue,
       });
-      // Устанавливаем новый Access Token
+
       this.setToken(response.accessToken);
     } catch (error) {
       console.error("Failed to refresh token:", error);
@@ -135,4 +135,4 @@ class APIBase {
   }
 }
 
-export default APIBase;
+export default ApiBase;
